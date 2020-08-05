@@ -1,0 +1,4 @@
+while inotifywait -q -e modify index.js >/dev/null; do
+    echo "filename is changed"
+    # do whatever else you need to do
+done
