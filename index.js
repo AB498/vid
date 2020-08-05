@@ -1,6 +1,7 @@
 var express = require('express');
 var socket = require('socket.io');
 var path = require('path');
+var port = process.env.PORT || 5000;
 
 var app = express();
 var server = express()
@@ -8,7 +9,7 @@ var server = express()
     .set('views', path.join(__dirname, 'views'))
     .set('view engine', 'ejs')
     .get('/', (req, res) => res.render('pages/index'))
-    .listen(5000, () => console.log(`Listening on 5001`));
+    .listen(port, () => console.log(`Listening on 5001`));
 
 io = socket(server);
 
