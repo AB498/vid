@@ -28,7 +28,8 @@ setInterval(function() {
     for(usr in vid){
     console.log(usr);
     	if(!users.includes(usr)){
-    		if(users.length>2)delete vid[usr];
+    		//if(users.length>2)
+    		  delete vid[usr];
     	}
     }
 
@@ -181,6 +182,7 @@ io.on('connection', function(socket) {
 
     socket.on('yesOnline', function(data) {
         if (data == onlineRand) pendingOnline.push(socket.id);
+        console.log(onlineRand+':'+data);
     });
 
     socket.on('audio', function(data) {
