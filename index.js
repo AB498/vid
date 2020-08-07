@@ -9,7 +9,7 @@ var server = express()
     .set('views', path.join(__dirname, 'views'))
     .set('view engine', 'ejs')
     .get('/', (req, res) => res.render('pages/index'))
-    .listen(port, () => console.log(`Listening on 5001`));
+    .listen(port, () => console.log(`Listening on ` + port));
 
 io = socket(server);
 

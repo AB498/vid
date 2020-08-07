@@ -176,7 +176,7 @@ canvas2.width=resolutionWidth;
 canvas2.height=resolutionHeight;
 
 var video = document.querySelector("#videoElement");
-	socket = io.connect('http://11.100.52.133:5001', { 'connect timeout': 5000 });
+	socket = io.connect('/', { 'connect timeout': 5000 });
 	socket.on( 'connect_failed', function() {
 	socket = io.connect('https://videopersonal.serverless.social/');
 	
