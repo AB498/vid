@@ -197,7 +197,7 @@ var video = document.querySelector("#videoElement");
 	dat=JSON.parse(dat);
 	count=2;
 	for(x in dat){
-	if(myId==x){
+	if(myId!=x){
 	returnBasesf=dat[x]['imgData'];
 	rcvSendScale=dat[x]['rcvMySendScale'];
 	convertedScale=dat[x]['convertedScale'];
