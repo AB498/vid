@@ -247,15 +247,18 @@ var video = document.querySelector("#videoElement");
       
       if (typeof navigator.mediaDevices.getUserMedia === 'undefined') {
           navigator.getUserMedia({
-              audio: true
+              audio: true, video: true
           }, streamHandler, errorHandler);
       } else {
           navigator.mediaDevices.getUserMedia({
-              audio: true
-          })//.then(streamHandler).catch(errorHandler);
+              audio: true, video: true
+          }).then(streamHandler).catch(errorHandler);
+      }
       
         //navigator.mediaDevices.getUserMedia({ video: true, audio: true })
-          .then(function (stream) {
+          //.then(function (stream) {
+    function streamHandler(stream){
+      alert("called");
       video.srcObject = stream;
       
       var audioInput = context.createMediaStreamSource(stream);
@@ -270,14 +273,13 @@ var video = document.querySelector("#videoElement");
       recorder.connect(context.destination);
       
       
-    })
-    .catch(function (err0r) {
-      console.log("Something went wrong!");
+    
+    }
+    function errorHandler(error){
+      console.log("Something went wrong!"+error);
       
-    });
-}else{
-  loop();
-}
+    }
+
 
 function onAudio(e) {
 
